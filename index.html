@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CreatorToolsHub - Free YouTube & Shorts Creator Tools</title>
+<meta name="description" content="Free creator tools for YouTube titles, descriptions, hashtags, tags, hooks, thumbnail text and short story ideas.">
+<meta name="keywords" content="YouTube title generator, shorts generator, hashtag generator, YouTube tags, thumbnail ideas, creator tools">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--text:#151827;--muted:#687083;--primary:#635bff;--border:#e6e8ef;--shadow:0 12px 35px rgba(25,28,50,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.nav{max-width:1150px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:800}.logo span{color:var(--primary)}
+nav a{margin-left:20px;text-decoration:none;color:#50586b;font-size:14px}
+.hero{max-width:1000px;margin:48px auto 30px;padding:0 20px;text-align:center}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.03;margin:0 0 16px}
+.hero p{max-width:700px;margin:auto;color:var(--muted);font-size:17px;line-height:1.6}
+.ad{max-width:970px;min-height:90px;margin:22px auto;padding:15px;border:1px dashed #c9cedb;background:#fff;color:#9aa1b1;display:flex;align-items:center;justify-content:center;font-size:13px}
+.container{max-width:1150px;margin:25px auto;padding:0 20px}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tool{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
+.tool:hover{transform:translateY(-3px);border-color:#c8c4ff}.icon{font-size:28px}.tool h3{margin:12px 0 7px;font-size:17px}.tool p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.app{max-width:850px;margin:35px auto;background:#fff;border:1px solid var(--border);border-radius:20px;padding:25px;box-shadow:var(--shadow)}
+.app h2{margin-top:0}.field{margin:15px 0}label{display:block;font-size:14px;font-weight:700;margin-bottom:7px}
+input,textarea,select{width:100%;padding:13px;border:1px solid var(--border);border-radius:10px;font:inherit;outline:none}
+textarea{min-height:100px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--primary)}
+button{border:0;background:var(--primary);color:#fff;padding:13px 20px;border-radius:10px;font-weight:700;cursor:pointer}button:hover{opacity:.92}
+.result{display:none;margin-top:20px;background:#f7f7ff;border:1px solid #dedcff;border-radius:12px;padding:18px;white-space:pre-wrap;line-height:1.65}
+.copy{margin-top:12px;background:#222;color:#fff}
+footer{margin-top:60px;padding:35px 20px;background:#151827;color:#c9cede;text-align:center;font-size:13px}
+@media(max-width:850px){.tools{grid-template-columns:repeat(2,1fr)}}@media(max-width:550px){nav a{display:none}.tools{grid-template-columns:1fr}.hero{margin-top:35px}.app{margin-left:15px;margin-right:15px;padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<div class="logo">Creator<span>ToolsHub</span></div>
+<nav><a href="#tools">Tools</a><a href="#generator">Generator</a><a href="#about">About</a></nav>
+</div></header>
+
+<section class="hero">
+<h1>Free Tools for <span style="color:#635bff">Creators</span></h1>
+<p>Create better YouTube titles, descriptions, hashtags, tags, hooks, thumbnail text and short-story ideas in seconds.</p>
+</section>
+
+<div class="ad">ADVERTISEMENT — Monetag / PopAds placement</div>
+
+<main class="container" id="tools">
+<div class="tools">
+<div class="tool" onclick="selectTool('title')"><div class="icon">🎬</div><h3>Title Generator</h3><p>Create catchy YouTube & Shorts titles.</p></div>
+<div class="tool" onclick="selectTool('description')"><div class="icon">📝</div><h3>Description Generator</h3><p>Generate engaging video descriptions.</p></div>
+<div class="tool" onclick="selectTool('hashtags')"><div class="icon">#️⃣</div><h3>Hashtag Generator</h3><p>Get relevant hashtags for your content.</p></div>
+<div class="tool" onclick="selectTool('tags')"><div class="icon">🏷️</div><h3>Tag Generator</h3><p>Generate searchable YouTube tags.</p></div>
+<div class="tool" onclick="selectTool('hooks')"><div class="icon">⚡</div><h3>Shorts Hooks</h3><p>Generate attention-grabbing opening lines.</p></div>
+<div class="tool" onclick="selectTool('thumbnail')"><div class="icon">🖼️</div><h3>Thumbnail Text</h3><p>Get short, clickable thumbnail phrases.</p></div>
+<div class="tool" onclick="selectTool('story')"><div class="icon">📖</div><h3>Story Ideas</h3><p>Create original short-video story concepts.</p></div>
+<div class="tool" onclick="selectTool('caption')"><div class="icon">💬</div><h3>Caption Generator</h3><p>Create social captions for videos.</p></div>
+</div>
+
+<div class="ad">ADVERTISEMENT — Monetag / PopAds placement</div>
+
+<section class="app" id="generator">
+<h2 id="toolTitle">YouTube Title Generator</h2>
+<div class="field"><label for="topic">Your topic</label><input id="topic" placeholder="Example: AI cartoon story"></div>
+<div class="field"><label for="style">Style</label>
+<select id="style"><option>Viral</option><option>Drama</option><option>Funny</option><option>Emotional</option><option>Educational</option><option>SEO</option></select></div>
+<button onclick="generate()">Generate</button>
+<div class="result" id="result"></div>
+<button class="copy" id="copyBtn" onclick="copyResult()" style="display:none">Copy Result</button>
+</section>
+</main>
+
+<footer id="about">
+<strong>CreatorToolsHub</strong><br><br>
+Free creator utilities for YouTube, Shorts and social media.<br>
+Use tools responsibly and follow the policies of the platforms and advertising networks you use.<br><br>
+© 2026 CreatorToolsHub
+</footer>
+
+<script>
+let current='title';
+const names={title:'YouTube Title Generator',description:'Description Generator',hashtags:'Hashtag Generator',tags:'YouTube Tag Generator',hooks:'Shorts Hook Generator',thumbnail:'Thumbnail Text Generator',story:'Short Story Idea Generator',caption:'Caption Generator'};
+function selectTool(t){current=t;document.getElementById('toolTitle').textContent=names[t];document.getElementById('result').style.display='none';document.getElementById('copyBtn').style.display='none';document.getElementById('generator').scrollIntoView({behavior:'smooth'})}
+function generate(){
+ const topic=document.getElementById('topic').value.trim()||'AI cartoon story';
+ const style=document.getElementById('style').value;
+ let out='';
+ if(current==='title') out=[
+  `${topic} You Won't Believe What Happens Next!`,
+  `The ${style} Story That Changed Everything`,
+  `${topic} | Must Watch Until The End!`,
+  `Nobody Expected This Ending 😱`,
+  `This ${topic} Story Is Going Viral`
+ ].join('\\n');
+ else if(current==='description') out=`Welcome to this ${style.toLowerCase()} video about ${topic}. Watch until the end for the full story and unexpected moment. If you enjoy the video, like, share and subscribe for more creator content.`;
+ else if(current==='hashtags') out=`#${topic.replace(/\\s+/g,'')} #YouTubeShorts #Shorts #Viral #Trending #Creator #ContentCreator #Video #Entertainment #Story`;
+ else if(current==='tags') out=`${topic}, ${topic} shorts, ${topic} video, YouTube shorts, viral shorts, trending video, creator content, short video, viral story, entertainment`;
+ else if(current==='hooks') out=[
+  `“Wait… you need to see what happens next!”`,
+  `“Nobody was ready for this moment…”`,
+  `“This changed everything in just 10 seconds!”`,
+  `“Stop scrolling — watch the ending!”`,
+  `“What would you do in this situation?”`
+ ].join('\\n');
+ else if(current==='thumbnail') out=`${topic.toUpperCase()}\\n\\n“WAIT FOR THE END!”\\n“BIG TWIST!”\\n“YOU WON'T BELIEVE THIS!”`;
+ else if(current==='story') out=`HOOK: A stranger gives the hero one mysterious message.\\n\\nSCENE 1: The hero opens it and discovers a secret about ${topic}.\\nSCENE 2: Someone arrives and says, “You were never supposed to find this.”\\nSCENE 3: The hero makes a surprising choice — ending on a cliffhanger.`;
+ else out=`${topic} ✨\\nA moment, a twist, and a story you won't forget. Watch till the end!\\n\\n#Shorts #Creator #Viral #Trending`;
+ document.getElementById('result').textContent=out;document.getElementById('result').style.display='block';document.getElementById('copyBtn').style.display='inline-block';
+}
+function copyResult(){navigator.clipboard.writeText(document.getElementById('result').textContent);document.getElementById('copyBtn').textContent='Copied ✓';setTimeout(()=>document.getElementById('copyBtn').textContent='Copy Result',1200)}
+</script>
+</body>
+</html>
